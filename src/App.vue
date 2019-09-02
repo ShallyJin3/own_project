@@ -9,10 +9,15 @@
 
 <script>
 import FooterGuide from './components/FooterGuide/footerGuide.vue'
-
+import {reqFoodType} from './api'
 // import HelloWorld from './components/HelloWorld'
 
 export default {
+  //发请求
+  async mounted() {
+    const res = await reqFoodType()
+    console.log(res)
+   },
   // 向外暴露映射成为标签
   components :{
     FooterGuide
