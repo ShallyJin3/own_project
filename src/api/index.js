@@ -1,8 +1,8 @@
 import ajax from './ajax'
-const BASE_URL ='/api'
-//const BASE_URL ='http://183.252.1.140:88/mock/38'
+//const BASE_URL ='/api'
+const BASE_URL ='http://183.252.1.140:88/mock/38'
 // [1、根据经纬度获取位置详情](#1 根据经纬度获取位置详情)<br/>
-export const reqAddress =(geohash) =>ajax(`${BASE_URL}/position/${geohash}`)
+export const reqAddress =(geohash) =>ajax(BASE_URL+`/position`)
 
 // [2、获取食品分类列表](#2 获取食品分类列表)<br/>
 export const reqFoodType =() =>ajax(BASE_URL+`/index`)

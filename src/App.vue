@@ -9,14 +9,22 @@
 
 <script>
 import FooterGuide from './components/FooterGuide/footerGuide.vue'
-import {reqFoodType} from './api'
+//import {reqFoodType} from './api'
+import {mapActions} from 'vuex'
+
 // import HelloWorld from './components/HelloWorld'
 
 export default {
   //发请求
-  async mounted() {
-    const res = await reqFoodType()
-    console.log(res)
+  mounted() {
+    // const res = await reqFoodType()
+    // console.log(res)
+   // this.$store.dispatch('getAddress')
+   this.getAddress()
+ 
+   },
+   methods: {
+     ...mapActions(['getAddress'])
    },
   // 向外暴露映射成为标签
   components :{

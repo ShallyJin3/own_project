@@ -1,15 +1,14 @@
 <template>
    <section class="msite">
         <!--首页头部-->
-      <headTop title="湖里区高新技术园(五缘湾)">
+      <headTop :title="address.name" class="headTop">
              <span class="header_search" slot="left">
               <i class="iconfont icon-icon-test1"></i>
             </span>
             <span class="header_login">
               <span class="header_login_text">登录|注册</span>
             </span>
-
-      </headTop>
+     </headTop>
        
         <!--首页导航-->
         <nav class="msite_nav">
@@ -133,10 +132,13 @@
 </template>
 
 <script>
+ //映射函数，讲state里面的内容映射过来
+  import {mapState} from 'vuex'
   //引入swiper轮播插件
+
   import Swiper from  '../../../node_modules/swiper'
   import   '../../../node_modules/swiper/dist/css/swiper.min.css'
-
+ 
   //a 引入顶部组件
   import HeadTop from '../../components/HeadTop/HeadTop.vue'
   import ShopList from '../../components/ShopList/ShopList.vue'
@@ -153,6 +155,10 @@ export default {
          }
      })
    },
+   //计算属性
+  computed: {
+    ...mapState(['address'])
+  },
  //b 映射成标签
    components:{
      HeadTop,
@@ -164,8 +170,9 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @import'../../common/styuls/mixins.styl';
      .msite  //首页
+        
           width 100%
-
+        
           .header_login
               font-size 12px
               position absolute
@@ -176,7 +183,7 @@ export default {
                 margin-top 50px
                 font-size 10px  
                 color #fff
-          .msite_nav
+        .msite_nav
             bottom-border-1px(#e4e4e4)
             margin-top 45px
             height 200px
@@ -230,4 +237,9 @@ export default {
                 font-size 14px
                 line-height 20px
           
+
+
+
+
 </style>
+
