@@ -11,7 +11,7 @@ import {
 export default {
     //定义修改上面三个参数的方法，从mutition_type里获得
      [RECEIVE_ADDRESS](state,address){
-        console.log(address)
+      
          state.address = address
          
       },
